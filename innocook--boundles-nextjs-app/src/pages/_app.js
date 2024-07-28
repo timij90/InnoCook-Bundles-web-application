@@ -1,5 +1,9 @@
-import "@/styles/globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import '@/styles/globals.css'; // Import global CSS
+import Layout from '../components/Layout'; // Import Layout component
+
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  // Wrap page content in Layout component
+  return (<Layout><Component {...pageProps} /></Layout>);
 }
