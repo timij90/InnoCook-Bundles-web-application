@@ -1,15 +1,16 @@
-import Head from "next/head";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Button, Form, Col, Row, Modal } from 'react-bootstrap';
 
-export default function Register() {
-	return (
-		<div>
-			<Head>
-				<title>Register | InnoCook Bundles</title>
-			</Head>
-			<main>
-				<h1 className="slogan-title text-center">Register Page</h1>
-				<div className="form-card">  <Form>
+function RegisterModal({show, handleClose}) {
+
+
+  return (
+    <>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Register Now!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+		<div className="form-card">  <Form>
 					<Row>
 						<Col>
 							<Form.Label>First Name</Form.Label>
@@ -35,13 +36,21 @@ export default function Register() {
 						<Form.Label>Password</Form.Label>
 						<Form.Control type="password" placeholder="Password" />
 					</Form.Group>
-					<Button className="my-button font-monospace" type="submit">
-						Register
-					</Button>
-				</Form></div>
 
-			</main>
-		</div>
-	);
+				</Form></div>
+        </Modal.Body>
+        <Modal.Footer>
+
+		  <Button className="my-button font-monospace" type="submit">
+						Submit
+				  </Button>
+				  <Button className="my-button font-monospace" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 }
 
+export default RegisterModal;

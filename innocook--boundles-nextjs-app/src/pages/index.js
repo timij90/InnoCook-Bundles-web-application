@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Home Page</title>
+        <title>Home Page | InnoCook Bundles</title>
       </Head>
       <main>
       <div className="text-center">
