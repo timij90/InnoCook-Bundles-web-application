@@ -17,10 +17,10 @@ export default function Search() {
 				<div className="search-form form-card justify-content-center">	<Form>
 					<Row className="g-2  form-weight">
 						<Form.Select aria-label="Floating label select example">
-							<option>Category menu</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+						<option value="">Select Meal Type</option>
+								<option value="Breakfast">Breakfast</option>
+								<option value="Lunch">Lunch</option>
+								<option value="Dinner">Dinner</option>
 						</Form.Select>
 					</Row>
 					<Row className="g-2 mt-3  form-weight">
