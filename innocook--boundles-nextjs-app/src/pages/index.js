@@ -17,7 +17,7 @@ export default function Home() {
           <Button className="my-button font-monospace" href="/search">GO EXPLORE</Button>
        
 </div>
-        <Carousel data-bs-theme="bright">
+      <Carousel data-bs-theme="bright">
       <Carousel.Item>
         <img
           className="d-block w-100 carousel-image"
