@@ -1,26 +1,23 @@
-import {Card, ListGroup} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
-export default function RecipeCard() {
-	
-	return (
-		<Card style={{ width: '18rem' }}>
-		<Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-		<Card.Body>
-		  <Card.Title>Card Title</Card.Title>
-		  <Card.Text>
-			Some quick example text to build on the card title and make up the
-			bulk of the card's content.
-		  </Card.Text>
-		</Card.Body>
-		<ListGroup className="list-group-flush">
-		  <ListGroup.Item>Cras justo odio</ListGroup.Item>
-		  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-		  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-		</ListGroup>
-		<Card.Body>
-		  <Card.Link href="#">Card Link</Card.Link>
-		  <Card.Link href="#">Another Link</Card.Link>
-		</Card.Body>
-	  </Card>
-	);
-}
+const RecipeCard = ({ recipe }) => {
+    return (
+        <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={recipe.image} />
+            <Card.Body>
+                <Card.Title>{recipe.label}</Card.Title>
+                <Card.Text>
+                    {recipe.source}
+                </Card.Text>
+                <div className="d-flex justify-content-between align-items-center">
+                    <Card.Link href={recipe.url}>View Recipe</Card.Link>
+                    <Button className="btn btn-sm btn-danger" variant="primary">
+                        <i className="bi bi-heart"></i>
+                    </Button>
+                </div>
+            </Card.Body>
+        </Card>
+    );
+};
+
+export default RecipeCard;
