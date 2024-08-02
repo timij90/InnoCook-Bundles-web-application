@@ -113,6 +113,7 @@ h5 {
   width:400px;
 }
 
+
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
   color: #e5ebef;
   background-color: #fff;
@@ -132,6 +133,131 @@ h5 {
   color: #e1e7ec;
 }
 
+
+
+.tab-title {
+  color: #007898; 
+  font-weight: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+}
+
+.tab-title:hover {
+  color: #3a3a3a;
+}
+
 /* .navbar-brand{
   font-family: 'Amaranth', serif;
 } */
+ 
+.recipe-card {
+  width: 18rem;
+  height: 25rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e1e7ec;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.recipe-card-body {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3a3a3a;
+}
+
+.recipe-card-text {
+  font-size: 0.9rem;
+  color: #606060;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.recipe-card-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.recipe-card-link:hover {
+  color: #0056b3;
+}
+
+.recipe-card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  background-color: #de822f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.recipe-card-button:hover{
+  background-color: #eccc60;
+  color: black;
+}
+
+
+.recipe-card-fav-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card-fav-button:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.recipe-card-fav-button:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.recipe-card-fav-button:active {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.recipe-card-fav-button i {
+  font-size: 1.2rem;
+  color: #dea72f;
+  transition: color 0.3s ease;
+}
+
+.recipe-card-fav-button i.bi-heart-fill {
+  color: #e03e3e;
+}

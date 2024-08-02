@@ -85,7 +85,7 @@
 
 import { useState } from "react";
 import Head from "next/head";
-import { Form, Button, FloatingLabel, Row, Col, Container, Modal, ListGroup } from "react-bootstrap";
+import { Form, Button, FloatingLabel, Row, Col, Container, Modal, ListGroup, Accordion, Card} from "react-bootstrap";
 import RecipeCard from "@/components/RecipeCard";
 import { my_fetch } from "@/services";
 
@@ -99,10 +99,10 @@ export default function Search() {
     const [dishType, setDishType] = useState("");
     const [recipeName, setRecipeName] = useState("");
     const [recipes, setRecipes] = useState([]);
-
-    const [showMealTypeModal, setShowMealTypeModal] = useState(false);
-    const [showCuisineTypeModal, setShowCuisineTypeModal] = useState(false);
-    const [showDishTypeModal, setShowDishTypeModal] = useState(false);
+// 
+//     const [showMealTypeModal, setShowMealTypeModal] = useState(false);
+//     const [showCuisineTypeModal, setShowCuisineTypeModal] = useState(false);
+//     const [showDishTypeModal, setShowDishTypeModal] = useState(false);
 
     const handleSearch = async (event) => {
         event.preventDefault();
@@ -135,13 +135,70 @@ export default function Search() {
             <main>
                 <Container fluid>
                     <Row>
-                        <Col md={3} className="sidebar">
+                        {/* <Col md={3} className="sidebar">
                             <h4>Category</h4>
                             <ListGroup>
                                 <ListGroup.Item action onClick={() => setShowMealTypeModal(true)}>Meal Type</ListGroup.Item>
                                 <ListGroup.Item action onClick={() => setShowCuisineTypeModal(true)}>Cuisine Type</ListGroup.Item>
                                 <ListGroup.Item action onClick={() => setShowDishTypeModal(true)}>Dish Type</ListGroup.Item>
                             </ListGroup>
+                        </Col> */}
+                        
+                        <Col md={2} className="sidebar">
+                            <div className="mt-5">
+                                <Card border="success">
+                                    <Card.Body>
+                                        <Card.Title>Category</Card.Title>
+                                        <Card.Text>
+                                            Meal:[{mealType}],Cuisine:[{cuisineType}],Dish:[{dishType}]
+                                        </Card.Text>
+                                    </Card.Body>
+                                    <Accordion defaultActiveKey={['0']} alwaysOpen>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>Meal Type</Accordion.Header>
+                            <Accordion.Body>
+                                {mealTypes.map((type) => (
+                                    <Form.Check
+                                        key={type}
+                                        type="checkbox"
+                                        label={type}
+                                        checked={mealType === type}
+                                        onChange={() => setMealType(type)}
+                                    />
+                                ))}
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                            <Accordion.Header>Cuisine Type</Accordion.Header>
+                            <Accordion.Body>
+                                {cuisineTypes.map((type) => (
+                                    <Form.Check
+                                        key={type}
+                                        type="checkbox"
+                                        label={type}
+                                        checked={cuisineType === type}
+                                        onChange={() => setCuisineType(type)}
+                                    />
+                                ))}
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="2">
+                            <Accordion.Header>Dish Type</Accordion.Header>
+                            <Accordion.Body>
+                                {dishTypes.map((type) => (
+                                    <Form.Check
+                                        key={type}
+                                        type="checkbox"
+                                        label={type}
+                                        checked={dishType === type}
+                                        onChange={() => setDishType(type)}
+                                    />
+                                ))}
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                                </Card>
+                            </div>
                         </Col>
                         <Col md={9}>
                             <div className="text-center">
@@ -180,7 +237,7 @@ export default function Search() {
                     </Row>
                 </Container>
 
-                <Modal show={showMealTypeModal} onHide={() => setShowMealTypeModal(false)}>
+                {/* <Modal show={showMealTypeModal} onHide={() => setShowMealTypeModal(false)}>
                     <Modal.Header closeButton>
                         <Modal.Title>Select Meal Type</Modal.Title>
                     </Modal.Header>
@@ -229,7 +286,7 @@ export default function Search() {
                             />
                         ))}
                     </Modal.Body>
-                </Modal>
+                </Modal> */}
             </main>
         </div>
     );

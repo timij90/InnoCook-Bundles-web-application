@@ -18,10 +18,11 @@ function Premium() {
       className="mb-3"
       justify
     >
-      <Tab eventKey="favorites" title="Favorites">
+      <Tab eventKey="favorites"             title={<span className="tab-title">Favorites</span>} 
+      >
         <Favorites />
       </Tab>
-      <Tab eventKey="history" title="History">
+      <Tab eventKey="history" title={<span className="tab-title">History</span>}>
         <History />
       </Tab>
     </Tabs>
