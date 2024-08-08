@@ -7,7 +7,6 @@ const users = require('./routes/userRoutes');
 const auth = require('./routes/authRoutes');
 const search = require('./routes/recipeRoutes');
 
-
 const app = express();
 
 // Connect Database

@@ -12,7 +12,7 @@ body {
 }
 
 p {
-  font-family: 'CircularStd', 'ui-sans-serif', 'system-ui', 'sans-serif';
+  font-family: 'Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -26,8 +26,10 @@ h5 {
   font-weight: bold;
 }
 
-.navbar {
+.navbar, #about-section {
   background-color: rgb(42, 72, 58, 0.8);
+  color: rgb(207, 209, 196);
+
 }
 
 .navbar .navbar-brand {
@@ -36,9 +38,9 @@ h5 {
   font-weight: bold;
 }
 
-.navbar .navbar-brand:hover {
+/* .navbar .navbar-brand:hover {
   color: #c5c7c9;
-}
+} */
 
 .navbar-text a {
   color: #cacccf;
@@ -93,7 +95,7 @@ h5 {
   width: 100%;
   height: auto; /* Full viewport height */
   padding: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .form-card .form {
@@ -112,7 +114,6 @@ h5 {
 .form-weight{
   width:400px;
 }
-
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
   color: #e5ebef;
@@ -133,78 +134,72 @@ h5 {
   color: #e1e7ec;
 }
 
-
-
-.tab-title {
-  color: #007898; 
-  font-weight: bold;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: large;
+/* New stuff I added */
+.small-image {
+  width: 100px; 
+  height: auto;
 }
 
-.tab-title:hover {
-  color: #3a3a3a;
+.no-border-card {
+  border: none;
+  border-radius: 0;
 }
 
-/* .navbar-brand{
-  font-family: 'Amaranth', serif;
-} */
- 
+.small-card {
+  width: 250px; 
+  height: auto;
+}
+
+.card-image {
+  border-radius: 0;
+
+}
+
+.navbar-brand{
+  font-size: x-large;
+}
+
+
+/*Add by Connie*/
+.lighter-footer {
+  background-color: #333333; /* Lighter dark color */
+}
+
+.lighter-footer a {
+  color: #cccccc ; /* Lighter text color */
+}
+
+.lighter-footer .border-top {
+  border-top-color: #444444 ; /* Lighter border color */
+}
+
+
+
 .recipe-card {
-  width: 18rem;
-  height: 25rem;
-  margin: 1rem;
+  border: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #e1e7ec;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  height: 100%;
+  background-color: rgba(253, 253, 253, 0.7);
+  width: 19rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.recipe-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.recipe-card img {
-  width: 100%;
-  height: 150px;
+.recipe-card-image {
   object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
 
 .recipe-card-body {
-  padding: 1rem;
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.recipe-card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #3a3a3a;
-}
-
-.recipe-card-text {
-  font-size: 0.9rem;
-  color: #606060;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.recipe-card-link {
-  color: #007bff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease-in-out;
-}
-
-.recipe-card-link:hover {
-  color: #0056b3;
+  padding: 1rem;
 }
 
 .recipe-card-button {
@@ -227,37 +222,126 @@ h5 {
   color: black;
 }
 
+.pagination {
+  justify-content: center;
+  margin: 20px 0;
+}
 
-.recipe-card-fav-button {
+.pagination .page-item {
+  margin: 0 2px;
+}
+
+.pagination .page-item .page-link {
+  border-radius: 3px;
+  padding: 8px 12px;
+  color: #333;
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #ced4da;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #3e74ae;
+  color: #fff;
+  border-color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #797d81;
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.custom-tabs .nav-link {
+  color: #333;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+
+.custom-tabs .nav-link.active {
+  color: #fff;
+  background-color: #3e74ae;
+}
+
+.custom-tabs .nav-link:hover {
+  color: #fff;
+  background-color: #22568e;
+  border-color: #3e74ae;
+}
+
+
+.no-favorites-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-added-card .card-title {
+  color: #3e74ae;
+}
+
+.no-added-card .card-text {
+  color: #666;
+}
+
+.no-added-card .btn {
+  background-color: #3e74ae;
+  color: #fff;
+  border: none;
+}
+
+.no-added-card .btn:hover {
+  background-color: #22568e;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.tabs-title {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+.info-card-header {
+  background-color: #3e74ae;
+  color: #fff;
+}
+
+/* .list-group-item {
   background-color: transparent;
   border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.info-card-title {
+  color: #3e74ae;
 }
 
-.recipe-card-fav-button:hover {
-  background-color: transparent;
-  box-shadow: none;
+
+
+#about-us-section {
+  background-color: rgb(42, 72, 58, 0.8);
+  color: rgb(207, 209, 196);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Adjust margin to center container */
+  margin-right: calc(-50vw + 50%); /* Adjust margin to center container */
+  position: relative;
 }
 
-.recipe-card-fav-button:focus {
-  outline: none;
-  box-shadow: none;
-  background-color: transparent;
-}
-
-.recipe-card-fav-button:active {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-.recipe-card-fav-button i {
-  font-size: 1.2rem;
-  color: #dea72f;
-  transition: color 0.3s ease;
-}
-
-.recipe-card-fav-button i.bi-heart-fill {
-  color: #e03e3e;
-}

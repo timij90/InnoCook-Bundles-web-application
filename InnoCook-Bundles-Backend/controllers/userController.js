@@ -35,21 +35,68 @@ exports.deleteUser = async (req, res) => {
 };
 
 exports.addFavorite = async (req, res) => {
-    const { recipe } = req.body;
+    const { recipeId } = req.body;
     try {
+        const response = await fetch(`https://api.edamam.com/api/recipes/v2/${recipeId}?type=public&app_id=${process.env.EDAMAM_APP_ID}&app_key=${process.env.EDAMAM_APP_KEY}`);
+        const data = await response.json();
+
+        if (!data || !data.recipe) {
+            return res.status(404).json({ message: 'Recipe not found' });
+        }
+
+        const recipe = data.recipe;
         const user = await User.findById(req.user.id);
+        const recipeIndex = user.favorites.findIndex(recipe => recipe.uri.includes(recipeId));
+
+        if (recipeIndex !== -1) {
+            console.log(recipeIndex);
+            return res.status(400).json({ message: 'Already added to favorites' });
+        }
+
         user.favorites.push(recipe);
         await user.save();
         res.json(user.favorites);
+    } catch (err) {
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+exports.deleteFavorite = async (req, res) => {
+    const { recipeId } = req.body;
+
+    try {
+        const user = await User.findById(req.user.id);
+        const recipeIndex = user.favorites.findIndex(recipe => recipe.uri.includes(recipeId));
+
+        if (recipeIndex === -1) {
+            return res.status(404).json({ message: 'Recipe not found in favorites' });
+        }
+
+        user.favorites.splice(recipeIndex, 1);
+        await user.save();
+        res.json(user.favorites);
+    } catch (err) {
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+
+exports.getFavorites = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (user.favorites.length > 0) res.json(user.favorites);
+        else res.json([]);
     } catch (err) {
         res.status(500).json({ msg: 'Server error' });
     }
 };
 
-exports.getFavorites = async (req, res) => {
+
+exports.getHistory = async (req, res) => {
     try {
         const user = await User.findById(req.user.id);
-        res.json(user.favorites);
+        if (user.history.length > 0) res.json(user.history);
+        else res.json([])
     } catch (err) {
         res.status(500).json({ msg: 'Server error' });
     }
