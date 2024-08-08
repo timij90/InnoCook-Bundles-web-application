@@ -1,16 +1,15 @@
 {
 	"version": 2,
 	"builds": [
-	  {
-		"src": "innocook--boundles-nextjs-app/next.config.mjs",
-		"use": "@vercel/next"
-	  }
+		{
+			"src": "innocook--boundles-nextjs-app/next.config.js",
+			"use": "@vercel/next"
+		}
 	],
 	"routes": [
-	  {
-		"src": "/(.*)",
-		"dest": "innocook--boundles-nextjs-app/$1"
-	  }
+		{
+			"src": "/(.*)",
+			"dest": "innocook--boundles-nextjs-app/$1"
+		}
 	]
-  }
-  
+}
