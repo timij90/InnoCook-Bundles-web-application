@@ -9,12 +9,14 @@ const search = require('./routes/recipeRoutes');
 
 const app = express();
 
+
 // Connect Database
 connectDB();
 
 // Middleware
 app.use(cors());
-app.use(express.json({ extended: false }));
+//app.use(express.json({ extended: false }));
+app.use(express.json());
 
 // Define Routes
 
