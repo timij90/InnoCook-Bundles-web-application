@@ -12,12 +12,12 @@
 	],
 	"routes": [
 	  {
-		"src": "/(.*)",
-		"dest": "innocook--bundles-nextjs-app/$1"
+		"src": "/api/(.*)",
+		"dest": "InnoCook-Bundles-Backend/server.js"
 	  },
 	  {
 		"src": "/(.*)",
-		"dest": "InnoCook-Bundles-Backend/server.js"
+		"dest": "innocook--bundles-nextjs-app/$1"
 	  }
 	]
   }
