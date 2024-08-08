@@ -2,23 +2,25 @@
 	"version": 2,
 	"builds": [
 	  {
-		"src": "innocook--bundles-nextjs-app/next.config.mjs",
+		"src": "/innocook--bundles-nextjs-app/next.config.mjs",
 		"use": "@vercel/next"
 	  },
 	  {
-		"src": "InnoCook-Bundles-Backend/server.js",
+		"src": "/InnoCook-Bundles-Backend/server.js",
 		"use": "@vercel/node"
 	  }
 	],
 	"routes": [
 	  {
 		"src": "/api/(.*)",
-		"dest": "InnoCook-Bundles-Backend/server.js"
+		"dest": "/InnoCook-Bundles-Backend/server.js"
 	  },
 	  {
 		"src": "/(.*)",
-		"dest": "innocook--bundles-nextjs-app/$1"
+		"dest": "/innocook--bundles-nextjs-app/$1"
 	  }
 	]
   }
+  
+ 
   
