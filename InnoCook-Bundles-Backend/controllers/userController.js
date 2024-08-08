@@ -6,6 +6,7 @@ exports.getUser = async (req, res) => {
         const user = await User.findById(req.user.id).select('-password');
         res.json(user);
     } catch (err) {
+        console.error('Error fetching user:', err); // debug
         res.status(500).json({ msg: 'Server error' });
     }
 };
@@ -21,6 +22,7 @@ exports.updateUser = async (req, res) => {
         const user = await User.findByIdAndUpdate(req.user.id, { $set: updatedFields }, { new: true });
         res.json(user);
     } catch (err) {
+        console.error('Error fetching user:', err); // debug
         res.status(500).json({ msg: 'Server error' });
     }
 };
