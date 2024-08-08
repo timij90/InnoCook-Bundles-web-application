@@ -17,6 +17,8 @@ app.use(cors());
 app.use(express.json({ extended: false }));
 
 // Define Routes
+
+app.get("/", (req, res) => res.send("Express on Vercel")); // testing used
 app.use('/api/auth', auth);
 app.use('/api/users', users);
 app.use('/api/recipes', search);
@@ -24,3 +26,5 @@ app.use('/api/recipes', search);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// testing used
+module.exports = app;
