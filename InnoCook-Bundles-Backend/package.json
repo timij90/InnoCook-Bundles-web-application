@@ -1,5 +1,5 @@
 {
-  "name": "innocook-bundles",
+  "name": "InnoCook-Bundles-Backend",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -18,3 +18,5 @@
     "mongoose": "^8.5.2"
   }
 }
+
+

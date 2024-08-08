@@ -12,7 +12,7 @@
 	],
 	"routes": [
 	  {
-		"src": "/(.*)",
+		"src": "/routes/(.*)",
 		"dest": "InnoCook-Bundles-Backend/server.js"
 	  },
 	  {
