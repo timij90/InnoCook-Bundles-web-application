@@ -14,7 +14,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+	origin: 'https://inno-cook-bundles-web-application.vercel.app' // replace with your frontend URL
+  }));
 app.use(express.json({ extended: false }));
 // app.use(express.json());
 
