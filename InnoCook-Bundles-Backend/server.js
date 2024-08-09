@@ -20,6 +20,7 @@ const corsOptions = {
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	allowedHeaders: ['Content-Type', 'Authorization']
   };
+app.options('*', cors()); // Enable pre-flight requests for all routes
 
 app.use(cors(corsOptions));
 
