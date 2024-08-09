@@ -16,7 +16,7 @@ connectDB();
 // Middleware
 // app.use(cors());
 const corsOptions = {
-	origin: 'https://inno-cook-bundles-web-application-bans2om6n.vercel.app',
+	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
 
