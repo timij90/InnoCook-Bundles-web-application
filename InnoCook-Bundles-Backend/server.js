@@ -18,12 +18,7 @@ connectDB();
 const corsOptions = {
 	origin: 'https://inno-cook-bundles-web-application-bans2om6n.vercel.app',
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-	allowedHeaders: ['Content-Type', 'Authorization'],
-	credentials: true  // Add this if your requests include cookies or other credentials
   };
-  
-  app.use(cors(corsOptions));
-  
 
 app.use(cors(corsOptions));
 
