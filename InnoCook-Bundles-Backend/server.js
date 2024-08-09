@@ -22,6 +22,8 @@ const corsOptions = {
   };
 
 app.use(cors(corsOptions));
+app.use(cors('https://inno-cook-bundles-web-application-bans2om6n.vercel.app/login'));
+
 app.use(express.json({ extended: false }));
 // app.use(express.json());
 
