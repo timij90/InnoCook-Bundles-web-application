@@ -35,10 +35,10 @@ app.use('/api/recipes', search);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-// testing used
 // Example route
 app.get('/api/hello', (req, res) => {
-	res.json({ message: 'Hello from the server!' });
+	res.json({ message: 'Hello from the server!' });// testing used
   });
   
-module.exports = app;
+module.exports = app; 
+
