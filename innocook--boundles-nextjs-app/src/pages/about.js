@@ -35,49 +35,66 @@ function About() {
 
 				{/* Tech Stack Section */}
 				<section className="mb-5">
-					<h2 className="text-center mb-4">Tech Stack</h2>
-					<Row className="text-center">
-						<Col md={6} lg={4} className="mb-4">
-							<Card className="no-border-card">
-								<Card.Header as="h5" className="info-card-header">Front-End</Card.Header>
-								<Card.Body>
-									<ListGroup variant="flush">
-										<ListGroup.Item>React</ListGroup.Item>
-										<ListGroup.Item>Next.js</ListGroup.Item>
-										<ListGroup.Item>React Bootstrap</ListGroup.Item>
-										<ListGroup.Item>CSS</ListGroup.Item>
-									</ListGroup>
-								</Card.Body>
-							</Card>
-						</Col>
-						<Col md={6} lg={4} className="mb-4">
-							<Card className="no-border-card">
-								<Card.Header as="h5" className="info-card-header">Back-End</Card.Header>
-								<Card.Body>
-									<ListGroup variant="flush">
-										<ListGroup.Item>Node.js</ListGroup.Item>
-										<ListGroup.Item>Express.js</ListGroup.Item>
+  <h2 className="text-center mb-4">Tech Stack</h2>
+  <Row className="text-center">
+    <Col md={6} lg={3} className="mb-4">
+      <Card className="no-border-card">
+        <Card.Header as="h5" className="info-card-header">Front-End</Card.Header>
+        <Card.Body>
+          <ListGroup variant="flush">
+            <ListGroup.Item>React</ListGroup.Item>
+            <ListGroup.Item>Next.js</ListGroup.Item>
+            <ListGroup.Item>React Bootstrap</ListGroup.Item>
+            <ListGroup.Item>CSS</ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </Col>
+    <Col md={6} lg={3} className="mb-4">
+      <Card className="no-border-card">
+        <Card.Header as="h5" className="info-card-header">Back-End</Card.Header>
+        <Card.Body>
+          <ListGroup variant="flush">
+            <ListGroup.Item>Node.js</ListGroup.Item>
+            <ListGroup.Item>Express.js</ListGroup.Item>
+            <ListGroup.Item>MongoDB</ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </Col>
+    <Col md={6} lg={3} className="mb-4">
+      <Card className="no-border-card">
+        <Card.Header as="h5" className="info-card-header">APIs & Others</Card.Header>
+        <Card.Body>
+          <ListGroup variant="flush">
+            <ListGroup.Item>Edamam Recipe API</ListGroup.Item>
+            <ListGroup.Item>JWT</ListGroup.Item>
+            <ListGroup.Item>Atom, Jotai</ListGroup.Item>
+            <ListGroup.Item>CORS</ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </Col>
+    <Col md={6} lg={3} className="mb-4">
+      <Card className="no-border-card">
+        <Card.Header as="h5" className="info-card-header">Deployment</Card.Header>
+        <Card.Body>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              <div className="card-subtitle">Back-End:</div>
+              Render
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <div className="card-subtitle">Front-End:</div>
+              Vercel
+            </ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
+    </Col>
+  </Row>
+</section>
 
-										<ListGroup.Item>MongoDB</ListGroup.Item>
-									</ListGroup>
-								</Card.Body>
-							</Card>
-						</Col>
-						<Col md={6} lg={4} className="mb-4">
-							<Card className="no-border-card">
-								<Card.Header as="h5" className="info-card-header">APIs & Others</Card.Header>
-								<Card.Body>
-									<ListGroup variant="flush">
-										<ListGroup.Item>Edamam Recipe API</ListGroup.Item>
-										<ListGroup.Item>JWT</ListGroup.Item>
-										<ListGroup.Item>Atom, Jotai</ListGroup.Item>
-										<ListGroup.Item>CORS</ListGroup.Item>
-									</ListGroup>
-								</Card.Body>
-							</Card>
-						</Col>
-					</Row>
-				</section>
 
 				<section className="mb-5">
 					<h2 className="text-center mb-4">Features</h2>
