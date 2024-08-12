@@ -3,7 +3,9 @@ import { jwtDecode } from 'jwt-decode';
 import Router from 'next/router';
 
 export function setToken(token) {
-    localStorage.setItem('access_token', token);
+    if (token) {
+        localStorage.setItem('access_token', token);
+    }
 }
 
 export function getToken() {
@@ -16,6 +18,7 @@ export function readToken() {
         console.log('Reading token:', token); // Add this line
         return token ? token : null; // Return the token string instead of decoding here
     } catch (err) {
+        console.error('Error reading token:', err);
         return null;
     }
 }
@@ -38,21 +41,51 @@ export function removeToken() {
     localStorage.removeItem('access_token');
 }
 
+// export async function registerUser(user, password, confirmPassword) {
+//     const { firstName, lastName, email } = user;
+//     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+//         method: "POST",
+//         body: JSON.stringify({ username: `${firstName} ${lastName}`, email, password, confirmPassword }),
+//     });
+//
+//     const data = await res.json();
+//     console.log('Response Status:', res.status); // Log the response status
+//
+//     console.log('Response:', data); // Debugging line
+//
+//     if (res.status === 200) {
+//         setToken(data.token);
+//         return true;
+//     } else {
+//         throw new Error(data.message);
+//     }
+// }
+
+
 export async function registerUser(user, password, confirmPassword) {
     const { firstName, lastName, email } = user;
-    const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
-        method: "POST",
-        body: JSON.stringify({ username: `${firstName} ${lastName}`, email, password, confirmPassword }),
-    });
 
-    const data = await res.json();
-    console.log('Response:', data); // Debugging line
+    try {
+        const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+            method: "POST",
+            body: JSON.stringify({ username: `${firstName} ${lastName}`, email, password, confirmPassword }),
+        });
 
-    if (res.status === 200) {
-        setToken(data.token);
-        return true;
-    } else {
-        throw new Error(data.message);
+        const data = await res.json();
+        console.log('Response Status:', res.status); // Log the response status
+        console.log('Response Data:', data); // Log the response data
+
+        if (res.status === 200 && data.token) {
+            console.log('Token received:', data.token); // Log the token received
+            setToken(data.token); // Save the token
+            return true;
+        } else {
+            console.error('Registration failed:', data.message);
+            throw new Error(data.message);
+        }
+    } catch (error) {
+        console.error('Error during registration:', error);
+        throw error;
     }
 }
 
