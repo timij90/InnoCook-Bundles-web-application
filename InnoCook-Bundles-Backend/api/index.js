@@ -14,10 +14,14 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({origin:"*",
-	methods:["GET","POST","PUT","DELETE"]
+// app.use(cors({origin:"*",
+// 	methods:["GET","POST","PUT","DELETE"]
+// }));
+app.use(cors({
+  origin: "https://inno-cook.vercel.app",  // Allow specific origin
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
 }));
-
 app.options('*', cors()); 
 // app.use(express.json({ extended: false }));
 app.use(express.json());
