@@ -14,15 +14,7 @@ const app = express();
 connectDB();
 
 // Middleware
-// app.use(cors());
-const corsOptions = {
-	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
-	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-	allowedHeaders: ['Content-Type', 'Authorization']
-  };
-app.options('*', cors()); // Enable pre-flight requests for all routes
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 // app.use(express.json({ extended: false }));
 app.use(express.json());
