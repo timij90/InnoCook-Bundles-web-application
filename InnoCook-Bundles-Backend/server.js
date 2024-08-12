@@ -22,15 +22,11 @@ connectDB();
 //   };
 // app.options('*', cors()); // Enable pre-flight requests for all routes
 const corsOptions = {
-	origin: [
-	  'https://inno-cook.vercel.app',
-		'https://inno-cook-bundles-backend.vercel.app',
-	  'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/'
-	],
+	origin: true, // Allow all origins
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'],
 	credentials: true,
-  };
+};
   
   
 app.use(cors(corsOptions));
