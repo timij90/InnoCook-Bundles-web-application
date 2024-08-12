@@ -1,14 +1,15 @@
-// api/auth.js
-
+// /innocook-backend/routes/userRoutes.js
 const express = require('express');
-const authRoutes = require('../routes/authRoutes');
-const app = express();
+const { getUser, updateUser, deleteUser, addFavorite, getFavorites, deleteFavorite, getHistory } = require('../controllers/userController');
+const authMiddleware = require('../middlewares/authMiddleware');
+const router = express.Router();
 
-// Middleware to parse JSON bodies
-app.use(express.json());
+router.get('/me', authMiddleware, getUser);
+router.put('/me', authMiddleware, updateUser);
+router.delete('/me', authMiddleware, deleteUser);
+router.get('/me/history', authMiddleware, getHistory);
+router.post('/me/favorites', authMiddleware, addFavorite);
+router.get('/me/favorites', authMiddleware, getFavorites);
+router.delete('/me/favorites', authMiddleware, deleteFavorite);
 
-// Use the auth routes
-app.use('/api/auth', authRoutes);
-
-// Export the Express app as a serverless function
-module.exports = app;
+module.exports = router;

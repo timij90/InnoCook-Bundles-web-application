@@ -1,14 +1,10 @@
-// api/auth.js
-
+// /innocook-backend/routes/recipeRoutes.js
 const express = require('express');
-const authRoutes = require('../routes/authRoutes');
-const app = express();
+const { searchRecipes, searchRecipeById } = require('../controllers/recipeController');
+const authMiddleware = require('../middlewares/authMiddleware');
+const router = express.Router();
 
-// Middleware to parse JSON bodies
-app.use(express.json());
+router.post('/search', searchRecipes);
+router.post('/search/id', authMiddleware, searchRecipeById);
 
-// Use the auth routes
-app.use('/api/auth', authRoutes);
-
-// Export the Express app as a serverless function
-module.exports = app;
+module.exports = router;
