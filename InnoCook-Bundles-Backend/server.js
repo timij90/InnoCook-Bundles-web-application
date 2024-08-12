@@ -9,12 +9,12 @@ const search = require('./routes/recipeRoutes');
 
 const app = express();
 
+app.use(cors()); 
 
 // Connect Database
 connectDB();
 
 // Middleware
-app.use(cors()); 
 // const corsOptions = {
 // 	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
 // 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
