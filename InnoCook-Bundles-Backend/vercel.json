@@ -1,7 +1,7 @@
 {
 	"version": 2,
 	"builds": [
-	  { "src": "api/*.js", "use": "@vercel/node" }
+	  { "src": "api/*.js", "use": "@vercel/node" },
 	  {
 		"src": "server.js",
 		"use": "@vercel/node"
@@ -14,7 +14,7 @@
 	  { "src": "/api/recipes/search/id", "dest": "/api/recipes.js" },
 	  { "src": "/api/users/me", "dest": "/api/users.js" },
 	  { "src": "/api/users/me/history", "dest": "/api/users.js" },
-	  { "src": "/api/users/me/favorites", "dest": "/api/users.js" }    {
+	  { "src": "/api/users/me/favorites", "dest": "/api/users.js" },    {
 		"src": "/(.*)",
 		"dest": "server.js"
 	  }
