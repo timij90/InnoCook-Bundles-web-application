@@ -15,13 +15,19 @@ connectDB();
 
 // Middleware
 // app.use(cors());
+// const corsOptions = {
+// 	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
+// 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+// 	allowedHeaders: ['Content-Type', 'Authorization']
+//   };
+// app.options('*', cors()); // Enable pre-flight requests for all routes
 const corsOptions = {
-	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
+	origin: 'https://inno-cook.vercel.app',
 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-	allowedHeaders: ['Content-Type', 'Authorization']
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	credentials: true, // Enable if your frontend sends cookies or other credentials
   };
-app.options('*', cors()); // Enable pre-flight requests for all routes
-
+  
 app.use(cors(corsOptions));
 
 // app.use(express.json({ extended: false }));
