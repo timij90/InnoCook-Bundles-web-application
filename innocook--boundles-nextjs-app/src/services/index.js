@@ -40,7 +40,7 @@ export function removeToken() {
 
 export async function registerUser(user, password, confirmPassword) {
     const { firstName, lastName, email } = user;
-    const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+    const res = await my_fetch('https://inno-cook-bundles-backend.vercel.app/api/auth/register', {
         method: "POST",
         body: JSON.stringify({ username: `${firstName} ${lastName}`, email, password, confirmPassword }),
     });
