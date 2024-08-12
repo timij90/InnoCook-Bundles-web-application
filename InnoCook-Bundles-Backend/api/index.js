@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Define Routes
 
-app.get("/", (req, res) => res.send("Express on Vercel")); // testing used
+app.get("/", (req, res) => res.send("Express is running on Vercel")); // testing used
 app.use('/auth', auth);
 app.use('/users', users);
 app.use('/recipes', search);
