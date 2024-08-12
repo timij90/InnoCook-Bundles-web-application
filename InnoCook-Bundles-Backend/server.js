@@ -9,7 +9,7 @@ const search = require('./routes/recipeRoutes');
 
 const app = express();
 
-app.use(cors()); 
+
 
 // Connect Database
 connectDB();
@@ -21,7 +21,9 @@ connectDB();
 // 	allowedHeaders: ['Content-Type', 'Authorization']
 //   };
 // app.options('*', cors()); // Enable pre-flight requests for all routes
-
+app.use(cors({origin:"*",
+	methods:["GET","POST"]
+}));
 // app.use(express.json({ extended: false }));
 app.use(express.json());
 
