@@ -21,9 +21,12 @@ connectDB();
 // 	allowedHeaders: ['Content-Type', 'Authorization']
 //   };
 // app.options('*', cors()); // Enable pre-flight requests for all routes
-app.use(cors({origin:"*",
-	methods:["GET","POST","PUT","DELETE"]
+app.use(cors({
+	origin: "*",
+	methods: ["GET", "POST", "PUT", "DELETE"]
 }));
+
+app.options('*', cors()); 
 // app.use(express.json({ extended: false }));
 app.use(express.json());
 
@@ -37,10 +40,7 @@ app.use('/api/recipes', search);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-// Example route
-app.get('/api/hello', (req, res) => {
-	res.json({ message: 'Hello from the server!' });// testing used
-  });
-  
-module.exports = app; 
+
+
+module.exports = app;
 
