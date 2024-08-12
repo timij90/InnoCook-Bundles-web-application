@@ -23,7 +23,9 @@ connectDB();
 // app.options('*', cors()); // Enable pre-flight requests for all routes
 app.use(cors({
 	origin: "*",
-	methods: ["GET", "POST", "PUT", "DELETE"]
+	methods: ["GET", "POST", "PUT", "DELETE"],
+	allowedHeaders: ['Content-Type', 'Authorization']
+
 }));
 
 app.options('*', cors()); 
