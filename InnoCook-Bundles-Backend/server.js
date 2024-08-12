@@ -22,7 +22,7 @@ connectDB();
 //   };
 // app.options('*', cors()); // Enable pre-flight requests for all routes
 app.use(cors({origin:"*",
-	methods:["GET","POST"]
+	methods:["GET","POST","PUT","DELETE"]
 }));
 // app.use(express.json({ extended: false }));
 app.use(express.json());
