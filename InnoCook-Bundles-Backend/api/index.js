@@ -1,11 +1,11 @@
 // /innocook-backend/server.js
 require('dotenv').config();
 const express = require('express');
-const connectDB = require('./config/db');
+const connectDB = require('../config/db');
 const cors = require('cors');
-const users = require('./routes/userRoutes');
-const auth = require('./routes/authRoutes');
-const search = require('./routes/recipeRoutes');
+const users = require('../routes/userRoutes');
+const auth = require('../routes/authRoutes');
+const search = require('../routes/recipeRoutes');
 
 const app = express();
 
@@ -22,9 +22,9 @@ app.use(express.json());
 // Define Routes
 
 // app.get("/", (req, res) => res.send("Express on Vercel")); // testing used
-app.use('/api/auth', auth);
-app.use('/api/users', users);
-app.use('/api/recipes', search);
+app.use('/auth', auth);
+app.use('/users', users);
+app.use('/recipes', search);
 
 const PORT = process.env.PORT || 8080;
 
