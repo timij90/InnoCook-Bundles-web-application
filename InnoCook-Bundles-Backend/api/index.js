@@ -9,37 +9,34 @@ const search = require('../routes/recipeRoutes');
 
 const app = express();
 
-
 // Connect Database
 connectDB();
 
-// Middleware
-// app.use(cors({origin:"*",
-// 	methods:["GET","POST","PUT","DELETE"]
-// }));
+// CORS Configuration
 app.use(cors({
   origin: "https://inno-cook.vercel.app",  // Allow specific origin
   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-  allowedHeaders: ["Content-Type", "Authorization"] // Allowed headers
+  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
 }));
-app.options('*', cors()); 
-// app.use(express.json({ extended: false }));
+
+// Handle preflight requests for all routes
+app.options('*', cors());
+
+// Body parser middleware
 app.use(express.json());
 
 // Define Routes
-
-// app.get("/", (req, res) => res.send("Express is running on Vercel")); // testing used
-app.use('/auth', auth);
+app.use('/auth', auth);   // This mounts routes like /auth/register, /auth/login
 app.use('/users', users);
 app.use('/recipes', search);
+
+// Test Route
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from the server!' });
+});
 
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-// Example route
-app.get('/api/hello', (req, res) => {
-	res.json({ message: 'Hello from the server!' });// testing used
-  });
-  
-module.exports = app; 
 
+module.exports = app;
