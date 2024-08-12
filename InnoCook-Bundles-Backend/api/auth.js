@@ -12,7 +12,7 @@ app.use(cors({
   }));
 app.use(express.json());
 
-app.post('api/auth/register', register);
-app.post('api/auth/login', login);
+app.post('/api/auth/register', register);
+app.post('/api/auth/login', login);
 
 module.exports = app;
