@@ -21,11 +21,15 @@ connectDB();
 // 	allowedHeaders: ['Content-Type', 'Authorization']
 //   };
 // app.options('*', cors()); // Enable pre-flight requests for all routes
+// app.use(cors({
+// 	origin: "*",
+// 	methods: ["GET", "POST", "PUT", "DELETE"]
+// }));
 app.use(cors({
-	origin: "*",
-	methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: "https://inno-cook.vercel.app",  // Allow specific origin
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+  allowedHeaders: ["Content-Type", "Authorization"] // Allowed headers
 }));
-
 app.options('*', cors()); 
 // app.use(express.json({ extended: false }));
 app.use(express.json());
