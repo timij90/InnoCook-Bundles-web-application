@@ -43,7 +43,7 @@
 
 
 // api/index.js
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const connectDB = require('../config/db');
 const cors = require('cors');
@@ -58,7 +58,7 @@ connectDB();
 
 // CORS Configuration
 app.use(cors({
-  origin: "http://localhost:3000",  // Allow specific origin
+  origin: "https://inno-cook.vercel.app",  // Allow specific origin
   methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],  // Allowed headers
 }));
