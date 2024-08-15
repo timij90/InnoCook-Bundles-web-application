@@ -1,6 +1,6 @@
 // /InnoCook-Bundles-Backend/api/users.js
 
-const express = require('express');
+// const express = require('express');
 const {
     getUser,
     updateUser,
@@ -12,12 +12,12 @@ const {
 } = require('../controllers/userController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-const cors = require('cors');
-const app = express();
-app.use(cors({origin:"*",
-	methods:["GET","POST","PUT","DELETE"]
-}));
-app.use(express.json());
+// const cors = require('cors');
+// const app = express();
+// app.use(cors({origin:"*",
+// 	methods:["GET","POST","PUT","DELETE"]
+// }));
+// app.use(express.json());
 
 app.get('/me', authMiddleware, getUser);
 app.put('/me', authMiddleware, updateUser);

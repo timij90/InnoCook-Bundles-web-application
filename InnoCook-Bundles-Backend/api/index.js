@@ -50,18 +50,18 @@ const cors = require('cors');
 const users = require('../routes/userRoutes');
 const auth = require('../routes/authRoutes');
 const search = require('../routes/recipeRoutes');
-const connectMongoose = require('./config/mongoose'); // Mongoose connection
+// const connectMongoose = require('./config/mongoose'); // Mongoose connection
 
 
 const app = express();
 
 // Connect Database
 connectDB();
-connectMongoose();
+// connectMongoose();
 
 // CORS Configuration
 app.use(cors({
-  origin: "https://inno-cook.vercel.app",  // Adjust based on your production domain
+  origin: "*",  // Adjust based on your production domain
   methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],  // Allowed headers
 }));
