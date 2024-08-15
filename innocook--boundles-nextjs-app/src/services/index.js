@@ -42,6 +42,7 @@ export async function registerUser(user, password, confirmPassword) {
     const { firstName, lastName, email } = user;
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
         method: "POST",
+        mode: 'no-cors', // not recommend
         body: JSON.stringify({ username: `${firstName} ${lastName}`, email, password, confirmPassword }),
     });
 
@@ -59,6 +60,7 @@ export async function registerUser(user, password, confirmPassword) {
 export async function authenticateUser(email, password) {
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
         method: "POST",
+        mode: 'no-cors', // not recommend
         body: JSON.stringify({ email, password }),
     });
 
@@ -75,6 +77,7 @@ export async function authenticateUser(email, password) {
 export async function addFavorite(recipeId) {
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/favorites`, {
         method: "POST",
+        mode: 'no-cors', // not recommend
         body: JSON.stringify({ recipeId }),
     });
 
@@ -90,6 +93,7 @@ export async function addFavorite(recipeId) {
 export async function deleteFavorite(recipeId) {
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/favorites`, {
         method: "DELETE",
+        mode: 'no-cors', // not recommend
         body: JSON.stringify({ recipeId }),
     });
 
@@ -105,6 +109,7 @@ export async function deleteFavorite(recipeId) {
 export async function getFavorites() {
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/favorites`, {
         method: "GET",
+        mode: 'no-cors', // not recommend
     });
 
     if (!res.ok) {
@@ -117,6 +122,7 @@ export async function getFavorites() {
 export async function getRecentlyViewed() {
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me/history`, {
         method: "GET",
+        mode: 'no-cors', // not recommend
     });
 
     if (!res.ok) {
@@ -129,6 +135,7 @@ export async function getRecentlyViewed() {
 export async function addRecentlyViewed(recipeId) {
     const res = await my_fetch(`${process.env.NEXT_PUBLIC_API_URL}/recipes/search/id`, {
         method: "POST",
+        mode: 'no-cors', // not recommend
         body: JSON.stringify({ recipeId }),
     });
 
