@@ -61,7 +61,7 @@ connectDB();
 
 // CORS Configuration
 app.use(cors({
-  origin: "*",  // Adjust based on your production domain
+  origin: "https://inno-cook.vercel.app",  // Adjust based on your production domain
   methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],  // Allowed headers
 }));
