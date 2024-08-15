@@ -11,14 +11,14 @@
 //     getHistory
 // } = require('../controllers/userController');
 // const authMiddleware = require('../middlewares/authMiddleware');
-// 
-// // const cors = require('cors');
-// // const app = express();
-// // app.use(cors({origin:"*",
-// // 	methods:["GET","POST","PUT","DELETE"]
-// // }));
-// // app.use(express.json());
-// 
+
+// const cors = require('cors');
+// const app = express();
+// app.use(cors({origin:"*",
+// 	methods:["GET","POST","PUT","DELETE"]
+// }));
+// app.use(express.json());
+
 // app.get('/me', authMiddleware, getUser);
 // app.put('/me', authMiddleware, updateUser);
 // app.delete('/me', authMiddleware, deleteUser);
@@ -26,9 +26,11 @@
 // app.post('/me/favorites', authMiddleware, addFavorite);
 // app.get('/me/favorites', authMiddleware, getFavorites);
 // app.delete('/me/favorites', authMiddleware, deleteFavorite);
-// 
+
 // module.exports = app;
 
+
+// /innocook-backend/routes/userRoutes.js
 const express = require('express');
 const { getUser, updateUser, deleteUser, addFavorite, getFavorites, deleteFavorite, getHistory } = require('../controllers/userController');
 const authMiddleware = require('../middlewares/authMiddleware');

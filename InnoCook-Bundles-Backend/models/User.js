@@ -13,4 +13,20 @@ const UserSchema = new Schema({
 
 module.exports = mongoose.model('User', UserSchema);
 
+// // /innocook-backend/models/User.js
+// const { MongoClient } = require('mongodb');
+// const connectDB = require('../config/db');
 
+// let usersCollection;
+
+// const getUsersCollection = async () => {
+//     if (!usersCollection) {
+//         await connectDB();
+//         const client = new MongoClient(process.env.MONGODB_URI);
+//         const db = client.db('innocook-bundles'); // Replace 'yourDatabaseName' with your actual database name
+//         usersCollection = db.collection('users');
+//     }
+//     return usersCollection;
+// };
+
+// module.exports = getUsersCollection;

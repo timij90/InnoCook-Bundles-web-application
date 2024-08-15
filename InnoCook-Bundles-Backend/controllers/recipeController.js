@@ -44,7 +44,8 @@ exports.searchRecipeById = async (req, res) => {
         const recipeIndex = user.history.findIndex(item => item.uri.includes(recipeId));
 
         if (recipeIndex !== -1) {
-            return res.status(400).json({ message: 'Already viewed this recipe' });
+            // return res.status(400).json({ message: 'Already viewed this recipe' });
+            return res.json(recipe);
         }
 
         user.history.push(recipe);

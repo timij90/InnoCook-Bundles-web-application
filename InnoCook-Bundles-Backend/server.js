@@ -16,7 +16,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:3000",  // Allow specific origin
+  origin: "https://inno",  // Allow specific origin
   methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],  // Allowed headers
 }));
@@ -33,7 +33,9 @@ app.use('/api/auth', auth);
 app.use('/api/users', users);
 app.use('/api/recipes', search);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 module.exports = app;
+
