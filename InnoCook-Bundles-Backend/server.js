@@ -41,7 +41,7 @@
 // module.exports = app;
 //
 
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
@@ -78,8 +78,8 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 // Example route
-// app.get('/api/hello', (req, res) => {
-// 	res.json({ message: 'Hello from the server!' });// testing used
-//   });
-//   
+app.get('/api/hello', (req, res) => {
+	res.json({ message: 'Hello from the server!' });// testing used
+  });
+  
 module.exports = app
