@@ -15,16 +15,17 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({
-  origin: "https://inno-cook.vercel.app",  // Allow specific origin
-  methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
-  allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],  // Allowed headers
-}));
+// app.use(cors({
+//   origin: "https://inno-cook.vercel.app",  // Allow specific origin
+//   methods: ["GET", "POST", "PUT", "DELETE"],  // Allowed methods
+//   allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],  // Allowed headers
+// }));
+//
+//
+// // Handle preflight requests for all routes
+// app.options('*', cors());
 
-
-// Handle preflight requests for all routes
-app.options('*', cors());
-
+app.use(cors());
 // Body parser middleware
 app.use(express.json());
 
