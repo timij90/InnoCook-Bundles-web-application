@@ -52,8 +52,8 @@ const app = express();
 
 //testing backend
 const search = require('./routes/recipeRoutes');
-const { searchRecipes, searchRecipeById } = require('../controllers/recipeController');
-const authMiddleware = require('../middlewares/authMiddleware');
+const { searchRecipes, searchRecipeById } = require('.userController/controllers/recipeController');
+const authMiddleware = require('./middlewares/authMiddleware');
 
 // Connect Database
 connectDB();
