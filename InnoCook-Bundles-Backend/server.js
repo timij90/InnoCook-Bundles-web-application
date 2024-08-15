@@ -47,10 +47,13 @@ const connectDB = require('./config/db');
 const cors = require('cors');
 const users = require('./routes/userRoutes');
 const auth = require('./routes/authRoutes');
-const search = require('./routes/recipeRoutes');
 
 const app = express();
 
+//testing backend
+const search = require('./routes/recipeRoutes');
+const { searchRecipes, searchRecipeById } = require('../controllers/recipeController');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Connect Database
 connectDB();
@@ -85,4 +88,10 @@ app.get('/api/hello', (req, res) => {
 app.get('/api/recipes', (req, res) => {
     res.json({ message: 'Hello from the recipes!' });// testing used
     });
+    
+    
+//testing backend
+app.post('/api/recipes/search', searchRecipes);
+app.post('/api/recipes/search/id', authMiddleware, searchRecipeById);
+
 module.exports = app
