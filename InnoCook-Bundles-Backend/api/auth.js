@@ -13,6 +13,10 @@ const app = express();
 //   allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
 // }));
 
+app.use(cors({origin:"*",
+	methods:["GET","POST","PUT","DELETE"]
+}));
+
 // Body parser middleware
 app.use(express.json());
 
