@@ -50,11 +50,14 @@ const cors = require('cors');
 const users = require('../routes/userRoutes');
 const auth = require('../routes/authRoutes');
 const search = require('../routes/recipeRoutes');
+const connectMongoose = require('./config/mongoose'); // Mongoose connection
+
 
 const app = express();
 
 // Connect Database
 connectDB();
+connectMongoose();
 
 // CORS Configuration
 app.use(cors({
