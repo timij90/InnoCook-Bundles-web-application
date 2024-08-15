@@ -1,13 +1,6 @@
 // /innocook-backend/middlewares/authMiddleware.js
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const jwt = require('jsonwebtoken');
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"]
-}));
+const jwt = require('jsonwebtoken');
 
 
 const authMiddleware = (req, res, next) => {
