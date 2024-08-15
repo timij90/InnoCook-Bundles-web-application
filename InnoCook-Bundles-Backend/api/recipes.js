@@ -35,5 +35,7 @@ app.use(express.json());
 
 app.post('/api/recipes/search', searchRecipes);
 app.post('/api/recipes/search/id', authMiddleware, searchRecipeById);
-
+app.get('/api/recipes', (req, res) => {
+    res.json({ message: 'Hello from the recipes in api!' });// testing used
+    });
 module.exports = app;

@@ -82,4 +82,7 @@ app.get('/api/hello', (req, res) => {
 	res.json({ message: 'Hello from the server!' });// testing used
   });
   
+app.get('/api/recipes', (req, res) => {
+    res.json({ message: 'Hello from the recipes!' });// testing used
+    });
 module.exports = app
