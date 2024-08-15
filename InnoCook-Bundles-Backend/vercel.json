@@ -8,10 +8,15 @@
 	  }
 	],
 	"routes": [
-	 {
+	  { "src": "/api/auth/register", "dest": "/api/auth.js" },
+	  { "src": "/api/auth/login", "dest": "/api/auth.js" },
+	  { "src": "/api/recipes/search", "dest": "/api/recipes.js" },
+	  { "src": "/api/recipes/search/id", "dest": "/api/recipes.js" },
+	  { "src": "/api/users/me", "dest": "/api/users.js" },
+	  { "src": "/api/users/me/history", "dest": "/api/users.js" },
+	  { "src": "/api/users/me/favorites", "dest": "/api/users.js" },    {
 		"src": "/(.*)",
 		"dest": "server.js"
 	  }
 	]
   }
-  
