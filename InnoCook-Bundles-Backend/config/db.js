@@ -1,20 +1,32 @@
 // /innocook-backend/config/db.js
 const mongoose = require('mongoose');
 
+let isConnected; // Track the connection status
+
 const connectDB = async () => {
+    if (isConnected) {
+        console.log('Using existing database connection');
+        return;
+    }
+    
     try {
-        await mongoose.connect(process.env.MONGODB_URI, {
-            // useNewUrlParser: true,
-            // useUnifiedTopology: true
+        const db = await mongoose.connect(process.env.MONGODB_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
         });
+
+        isConnected = db.connections[0].readyState;
         console.log('MongoDB connected');
     } catch (err) {
-        console.error(err.message);
+        console.error('Error connecting to MongoDB:', err.message);
         process.exit(1);
     }
 };
 
 module.exports = connectDB;
+
 
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 // 
