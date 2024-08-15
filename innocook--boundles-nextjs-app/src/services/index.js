@@ -153,6 +153,7 @@ export async function my_fetch(url, args) {
         ...args,
         headers: {
             "content-type": "application/json",
+            mode: 'no-cors', // not recommend
             "x-auth-token": getToken()
         }
     }
