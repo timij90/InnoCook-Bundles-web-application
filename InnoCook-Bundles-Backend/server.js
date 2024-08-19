@@ -48,7 +48,6 @@ const cors = require('cors');
 const users = require('./routes/userRoutes');
 const auth = require('./routes/authRoutes');
 const search = require('./routes/recipeRoutes');
-
 const app = express();
 
 
@@ -56,13 +55,17 @@ const app = express();
 connectDB();
 
 // Middleware
+
 app.use(cors()); 
-// const corsOptions = {
-// 	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
-// 	methods: ['GET', 'POST', 'PUT', 'DELETE'],
-// 	allowedHeaders: ['Content-Type', 'Authorization']
-//   };
-// app.options('*', cors()); // Enable pre-flight requests for all routes
+
+const corsOptions = {
+	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
+	methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+	allowedHeaders: ['Content-Type', 'Authorization']
+};
+app.use(cors(corsOptions)); 
+
+app.options('*', cors()); // Enable pre-flight requests for all routes
 
 // app.use(express.json({ extended: false }));
 app.use(express.json());
