@@ -81,11 +81,7 @@ function About() {
                 <Card.Body>
                   <ListGroup variant="flush">
                     <ListGroup.Item>
-                      <div className="card-subtitle">Back-End:</div>
-                      Vercel
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      <div className="card-subtitle">Front-End:</div>
+                      <div className="card-subtitle">Platform:</div>
                       Vercel
                     </ListGroup.Item>
                   </ListGroup>

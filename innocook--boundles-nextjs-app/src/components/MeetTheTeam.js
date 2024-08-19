@@ -9,7 +9,7 @@ const teamMembers = [
         title: 'CPA Student',
         description: 'I am a proactive and self-motivated individual who is skilled in web development, feel free to reach me!',
         social: [
-            { platform: 'linkedin', url: 'https://facebook.com' },
+            { platform: 'linkedin', url: 'www.linkedin.com/in/timi-jacobs-b61882241' },
             { platform: 'github', url: 'https://github.com' }
         ],
     },
@@ -17,10 +17,10 @@ const teamMembers = [
         image: 'https://img.freepik.com/free-vector/smiling-woman-with-wavy-hair_1308-171736.jpg?t=st=1722913885~exp=1722917485~hmac=f29844a7e32556a81ca556ffee57c66ed859fb80fe6a33fc64d266968a523faa&w=1060',
         name: 'Connie Hsu',
         title: 'CPA Student',
-        description: 'I am a eager learner who is passionate about programming, and always look for innovative solutions to solve real-world problems.',
+        description: 'I am a eager learner who is passionate about software development, and always look for innovative solutions to solve real-world problems.',
         social: [
-            { platform: 'linkedin', url: 'https://facebook.com' },
-            { platform: 'github', url: 'https://github.com' }
+            { platform: 'linkedin', url: 'https://www.linkedin.com/in/connie-hsu-yungting/' },
+            { platform: 'github', url: 'https://github.com/coniiiettn' }
         ],
     },
 ];
