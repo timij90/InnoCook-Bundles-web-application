@@ -34,7 +34,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const app = express();
 app.use(express.json());
 
-app.post('/api/recipes/search', searchRecipes);
-app.post('/api/recipes/search/id', authMiddleware, searchRecipeById);
+app.post('/recipes/search', searchRecipes);
+app.post('/recipes/search/id', authMiddleware, searchRecipeById);
 
 module.exports = app;
