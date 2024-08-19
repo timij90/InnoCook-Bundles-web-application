@@ -70,9 +70,9 @@ app.use(express.json());
 // Define Routes
 
 // app.get("/", (req, res) => res.send("Express on Vercel")); // testing used
-app.use('/api/auth', auth);
-app.use('/api/users', users);
-app.use('/api/recipes', recipes);
+app.use('/auth', auth);
+app.use('/users', users);
+app.use('/recipes', search);
 
 const PORT = process.env.PORT || 8080;
 
