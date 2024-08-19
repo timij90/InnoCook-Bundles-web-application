@@ -56,9 +56,9 @@ app.use(cors());
 
 const corsOptions = {
 	origin: 'https://inno-cook.vercel.app',
-	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+	methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 	allowedHeaders: ['Content-Type', 'Authorization'],
-	optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+	optionsSuccessStatus: 204 // Some legacy browsers choke on 204
 };
 
 app.use(cors(corsOptions));
