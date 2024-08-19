@@ -56,14 +56,14 @@ connectDB();
 
 // Middleware
 
-app.use(cors()); 
+app.use(cors());
 
 const corsOptions = {
 	origin: 'https://inno-cook-bundles-web-application-5zz6af8ou.vercel.app/',
 	methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 	allowedHeaders: ['Content-Type', 'Authorization']
 };
-app.use(cors(corsOptions)); 
+app.use(cors(corsOptions));
 
 app.options('*', cors()); // Enable pre-flight requests for all routes
 
@@ -80,9 +80,10 @@ app.use('/api/recipes', search);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
 // Example route
 app.get('/api/hello', (req, res) => {
 	res.json({ message: 'Hello from the server!' });// testing used
-  });
-  
+});
+
 module.exports = app; 

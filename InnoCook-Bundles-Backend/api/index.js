@@ -70,7 +70,6 @@ app.options('*', cors(corsOptions));
 app.use(express.json());
 
 // Define Routes
-
 app.get("/", (req, res) => res.send("Express on Vercel")); // testing used
 app.use('/auth', auth);
 app.use('/users', users);
@@ -84,4 +83,4 @@ app.get('/api/hello', (req, res) => {
 	res.json({ message: 'Hello from the server!' });// testing used
 });
 
-module.exports = app; 
+module.exports = app;
