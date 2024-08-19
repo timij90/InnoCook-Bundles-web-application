@@ -54,6 +54,18 @@ connectDB();
 // Middleware
 app.use(cors());
 
+const corsOptions = {
+	origin: 'https://inno-cook.vercel.app',
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+};
+
+app.use(cors(corsOptions));
+
+// OR (for all routes if needed)
+app.options('*', cors(corsOptions));
+
 // app.use(express.json({ extended: false }));
 app.use(express.json());
 
@@ -70,6 +82,6 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 // Example route
 app.get('/api/hello', (req, res) => {
 	res.json({ message: 'Hello from the server!' });// testing used
-  });
-  
+});
+
 module.exports = app; 
