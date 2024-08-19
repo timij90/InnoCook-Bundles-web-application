@@ -72,7 +72,7 @@ app.use(express.json());
 // app.get("/", (req, res) => res.send("Express on Vercel")); // testing used
 app.use('/api/auth', auth);
 app.use('/api/users', users);
-app.use('/routes/recipeRoutes', search);
+app.use('/api/recipes', recipes);
 
 const PORT = process.env.PORT || 8080;
 

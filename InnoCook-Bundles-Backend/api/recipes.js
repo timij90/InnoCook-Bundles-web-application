@@ -26,6 +26,7 @@
 // router.post('api/recipes/search/id', authMiddleware, searchRecipeById);
 // 
 // module.exports = router;
+//api/recipes.js
 const express = require('express');
 const { searchRecipes, searchRecipeById } = require('../controllers/recipeController');
 const authMiddleware = require('../middlewares/authMiddleware');
