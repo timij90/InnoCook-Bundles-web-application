@@ -3,6 +3,8 @@ import { registerUser } from "../services";
 import { Modal, Button, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
+
 import CustomAlert from './CustomAlert';
 
 export default function RegisterModal({ show, handleClose }) {
@@ -17,9 +19,10 @@ export default function RegisterModal({ show, handleClose }) {
 	});
 	const [warning, setWarning] = useState('');
 	const [showMessage, setShowMessage] = useState(false);
-	const { token, username } = authState;
 	const router = useRouter();
-
+	const { authState, logout } = useAuth();
+	const { username } = authState;
+	
 	const onSubmit = async (data, e) => {
 		e.preventDefault();
 		console.log('Form submitted'); // Debugging line
@@ -49,7 +52,7 @@ export default function RegisterModal({ show, handleClose }) {
 		<>
 			<Modal show={show} onHide={handleCloseModal}>
 				<Modal.Header closeButton>
-					<Modal.Title>Register Now!</Modal.Title>
+					<Modal.Title>Join Us!</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					{/* {warning && <>
@@ -68,7 +71,7 @@ export default function RegisterModal({ show, handleClose }) {
 					<CustomAlert>
 						show={showMessage}
 						variant="success"
-						heading="Welcome!{username} "
+						heading="Welcome! { username }"
 						message="You have successfully registered. Start exploring your recipes now!"
 						onClose={() => setShowMessage(false)}
 					</CustomAlert>
