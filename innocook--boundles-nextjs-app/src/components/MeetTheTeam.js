@@ -19,7 +19,7 @@ const teamMembers = [
         title: 'CPA Student',
         description: 'I am a eager learner who is passionate about software development, and always look for innovative solutions to solve real-world problems.',
         social: [
-            { platform: 'linkedin', url: 'https://www.linkedin.com/in/connie-hsu-yungting/' },
+            { platform: 'linkedin', url: 'https://www.linkedin.com/in/connie-hsu-yungting' },
             { platform: 'github', url: 'https://github.com/coniiiettn' }
         ],
     },
