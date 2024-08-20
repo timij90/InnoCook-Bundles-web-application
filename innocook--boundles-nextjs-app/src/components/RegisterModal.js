@@ -3,8 +3,7 @@ import { registerUser } from "../services";
 import { Modal, Button, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { CustomAlert } from './CustomAlert';
-import { useAuth } from '@/context/AuthContext';
+import { CustomAlert } from 'CustomAlert';
 
 export default function RegisterModal({ show, handleClose }) {
 	const { register, handleSubmit, formState: { errors, touchedFields }, trigger, reset } = useForm({
@@ -69,7 +68,7 @@ export default function RegisterModal({ show, handleClose }) {
 					<CustomAlert>
 						show={showMessage}
 						variant="success"
-						heading="Welcome!{username} "
+						heading="Welcome!{firstName} "
 						message="You have successfully registered. Start exploring your recipes now!"
 						onClose={() => setShowMessage(false)}
 					</CustomAlert>
