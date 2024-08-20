@@ -1,7 +1,8 @@
 # InnoCook-Bundles Web Application
 
 Welcome to **InnoCook-Bundles**, a web application designed to make your cooking experience smarter and more enjoyable! This project was developed in collaboration with my partner, and we're excited to share it with the world.
-![Screenshot 2024-08-20 at 1 24 55 PM](https://github.com/user-attachments/assets/48da724d-1d34-4f7f-914b-1de494a9e48d)
+
+![Screenshot 2024-08-20 at 1 26 19 PM](https://github.com/user-attachments/assets/a2fe6ceb-e3c6-4761-9385-f7c6851e338c)
 
 ## 🌟 Features
 
