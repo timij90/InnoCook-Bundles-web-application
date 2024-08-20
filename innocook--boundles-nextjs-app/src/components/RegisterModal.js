@@ -3,8 +3,6 @@ import { registerUser } from "../services";
 import { Modal, Button, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { useAuth } from '@/context/AuthContext';
-
 import CustomAlert from './CustomAlert';
 
 export default function RegisterModal({ show, handleClose }) {
@@ -20,8 +18,6 @@ export default function RegisterModal({ show, handleClose }) {
 	const [warning, setWarning] = useState('');
 	const [showMessage, setShowMessage] = useState(false);
 	const router = useRouter();
-	const { authState, logout } = useAuth();
-	const { username } = authState;
 
 	const onSubmit = async (data, e) => {
 		e.preventDefault();
@@ -35,7 +31,7 @@ export default function RegisterModal({ show, handleClose }) {
 
 				setTimeout(() => {
 					router.push("/");
-				}, 3000); // Redirect after 3 seconds
+				}, 4000); // Redirect to home page after 4 seconds
 			}
 		} catch (error) {
 			console.error('Error during registration:', error); // Debugging line
@@ -55,12 +51,6 @@ export default function RegisterModal({ show, handleClose }) {
 					<Modal.Title>Join Us!</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					{/* {warning && <>
-						<br />
-						<Alert variant='danger'>
-							{warning}
-						</Alert>
-					</>} */}
 					<CustomAlert show={warning !== ''}
 						variant="danger"
 						heading="Login Error"
@@ -69,8 +59,8 @@ export default function RegisterModal({ show, handleClose }) {
 					</CustomAlert>
 					<CustomAlert show={showMessage}
 						variant="success"
-						heading="Welcome! { username }"
-						message="You have successfully registered. Start exploring your recipes now!"
+						heading= "Successfully Registered!" 
+						message="Start exploring your recipes now..."
 						onClose={() => setShowMessage(false)}>
 
 					</CustomAlert>
