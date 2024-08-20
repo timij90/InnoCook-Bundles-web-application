@@ -22,7 +22,7 @@ export default function RegisterModal({ show, handleClose }) {
 	const router = useRouter();
 	const { authState, logout } = useAuth();
 	const { username } = authState;
-	
+
 	const onSubmit = async (data, e) => {
 		e.preventDefault();
 		console.log('Form submitted'); // Debugging line
@@ -61,19 +61,18 @@ export default function RegisterModal({ show, handleClose }) {
 							{warning}
 						</Alert>
 					</>} */}
-					<CustomAlert>
-						show={warning !== ''}
+					<CustomAlert show={warning !== ''}
 						variant="danger"
 						heading="Login Error"
 						message={warning}
-						onClose={() => setWarning('')}
+						onClose={() => setWarning('')}>
 					</CustomAlert>
-					<CustomAlert>
-						show={showMessage}
+					<CustomAlert show={showMessage}
 						variant="success"
 						heading="Welcome! { username }"
 						message="You have successfully registered. Start exploring your recipes now!"
-						onClose={() => setShowMessage(false)}
+						onClose={() => setShowMessage(false)}>
+
 					</CustomAlert>
 					<div className="form-card">
 						<Form id="register-form" onSubmit={handleSubmit(onSubmit)}>
