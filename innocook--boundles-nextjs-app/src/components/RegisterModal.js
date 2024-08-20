@@ -17,6 +17,7 @@ export default function RegisterModal({ show, handleClose }) {
 	});
 	const [warning, setWarning] = useState('');
 	const [showMessage, setShowMessage] = useState(false);
+	const { token, username } = authState;
 	const router = useRouter();
 
 	const onSubmit = async (data, e) => {
@@ -67,7 +68,7 @@ export default function RegisterModal({ show, handleClose }) {
 					<CustomAlert>
 						show={showMessage}
 						variant="success"
-						heading="Welcome!{firstName} "
+						heading="Welcome!{username} "
 						message="You have successfully registered. Start exploring your recipes now!"
 						onClose={() => setShowMessage(false)}
 					</CustomAlert>
