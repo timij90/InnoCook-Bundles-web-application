@@ -6,7 +6,7 @@ import { authenticateUser } from "@/services";
 import RegisterModal from "@/components/RegisterModal";
 import { useRouter } from "next/router";
 import { useAuth } from '@/context/AuthContext';
-import CustomAlert from '@/components/CustomAlert';  // Import the CustomAlert component
+import CustomAlert from '@/components/CustomAlert'; 
 
 export default function Login(props) {
   const { register, handleSubmit, formState: { errors, touchedFields }, reset, trigger } = useForm({
@@ -36,7 +36,7 @@ export default function Login(props) {
       setWarning(''); // Clear any warnings
       setTimeout(() => {
         router.push("/");
-      }, 3000); // Redirect after 2 seconds
+      }, 3000); // Redirect after 3 seconds
     } catch (error) {
       console.error('Error during login:', error);
       setWarning(error.message);

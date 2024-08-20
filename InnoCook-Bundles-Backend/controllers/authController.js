@@ -7,12 +7,12 @@ exports.register = async (req, res) => {
     const { username, email, password, confirmPassword } = req.body;
 
     if (password !== confirmPassword) {
-        return res.status(400).json({ message: 'Passwords do not match' });
+        return res.status(400).json({ message: 'Password doesn\'t not match' });
     }
 
     try {
         let user = await User.findOne({ email });
-        if (user) return res.status(400).json({ message: 'User already exists' });
+        if (user) return res.status(400).json({ message: 'User already exists!' });
 
         user = new User({ username, email, password });
         const salt = await bcrypt.genSalt(10);
