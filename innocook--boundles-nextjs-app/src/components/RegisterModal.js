@@ -31,9 +31,9 @@ export default function RegisterModal({ show, handleClose }) {
 			const registered = await registerUser({ firstName, lastName, email }, password, confirmPassword);
 			if (registered) {
 				console.log('Registration successful'); // Debugging line
+				setShowMessage(true); // Show success message
 
 				setTimeout(() => {
-					setShowMessage(true); // Show success message
 					router.push("/");
 				}, 3000); // Redirect after 3 seconds
 			}
