@@ -1,5 +1,5 @@
 // components/MeetTheTeam.js
-import { Container, Row} from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import TeamMember from './TeamMember';
 
 const teamMembers = [
