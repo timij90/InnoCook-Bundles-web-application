@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { registerUser } from "../services";
+import { registerUser } from "@/services";
 import { Modal, Button, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -59,7 +59,7 @@ export default function RegisterModal({ show, handleClose }) {
 					</CustomAlert>
 					<CustomAlert show={showMessage}
 						variant="success"
-						heading= "Successfully Registered!" 
+						heading="Successfully Registered!"
 						message="Start exploring your recipes now..."
 						onClose={() => setShowMessage(false)}>
 
